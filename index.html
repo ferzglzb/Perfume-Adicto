@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfume Adicto | Tu Esencia, Tu Adicción</title>
+    <meta name="description"
+        content="Perfumería de decants en Saltillo, Coahuila. Fragancias de lujo en tamaños de 3ml, 5ml y 10ml a precios accesibles.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --bg: #090909;
+            --bg2: #111111;
+            --bg3: #181818;
+            --gold: #C9A84C;
+            --gold2: #e8cc7a;
+            --gold-dim: rgba(201, 168, 76, 0.15);
+            --cream: #F0E8DC;
+            --gray: #888;
+            --font-h: 'Cormorant Garamond', serif;
+            --font-l: 'Cinzel', serif;
+            --glass: rgba(255, 255, 255, 0.035);
+            --glass-border: rgba(201, 168, 76, 0.18);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--cream);
+            font-family: var(--font-h);
+            overflow-x: hidden;
+            line-height: 1.6
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: #000
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg)
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 3px
+        }
+
+        /* BG radial glow */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(ellipse, rgba(201, 168, 76, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0
+        }
+
+        /* ── FADE-IN ── */
+        .fi {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .9s ease, transform .9s ease
+        }
+
+        .fi.show {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .fi-d1 {
+            transition-delay: .1s
+        }
+
+        .fi-d2 {
+            transition-delay: .2s
+        }
+
+        .fi-d3 {
+            transition-delay: .3s
+        }
+
+        .fi-d4 {
+            transition-delay: .4s
+        }
+
+        /* ── HEADER ── */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            transition: all .4s ease
+        }
+
+        header.scrolled {
+            background: rgba(9, 9, 9, .92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border)
+        }
+
+        .hdr {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.4rem 2rem;
+            transition: padding .4s
+        }
+
+        header.scrolled .hdr {
+            padding: .9rem 2rem
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--gold)
+        }
+
+        .logo svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--gold)
+        }
+
+        .logo-txt {
+            font-family: var(--font-l);
+            font-size: 1.1rem;
+            letter-spacing: 3px
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem
+        }
+
+        nav a {
+            color: rgba(240, 232, 220, .7);
+            text-decoration: none;
+            font-family: var(--font-l);
+            font-size: .78rem;
+            letter-spacing: 1.5px;
+            transition: color .3s
+        }
+
+        nav a:hover {
+            color: var(--gold)
+        }
+
+        .btn-wa-hdr {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #1faa55, #25D366);
+            color: #fff;
+            border: none;
+            padding: .7rem 1.4rem;
+            font-family: var(--font-l);
+            font-size: .78rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all .3s;
+            cursor: pointer
+        }
+
+        .btn-wa-hdr:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, .35)
+        }
+
+        /* ── HERO ── */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        #particles-js {
+            position: absolute;
+            inset: 0;
+            z-index: 1
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 820px;
+            padding: 0 2rem
+        }
+
+        .hero-kicker {
+            font-family: var(--font-l);
+            font-size: .75rem;
+            letter-spacing: 6px;
+            color: var(--gold);
+            opacity: .8;
+            margin-bottom: 1.5rem;
+            display: block
+        }
+
+        .hero-h1 {
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 700;
+            line-height: 1.05;
+            background: linear-gradient(135deg, #e8cc7a, #C9A84C, #a07d30);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: .5rem
+        }
+
+        .hero-sub {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--cream);
+            opacity: .75;
+            margin-bottom: 2.5rem
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #a07d30, #C9A84C, #e8cc7a);
+            color: #0a0a0a;
+            padding: .85rem 2rem;
+            font-family: var(--font-l);
+            font-size: .82rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            border-radius: 4px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all .35s;
+            position: relative;
+            overflow: hidden
+        }
+
+        .btn-gold::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .4) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform .6s
+        }
+
+        .btn-gold:hover::after {
+            transform: translateX(100%)
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(201, 168, 76, .45)
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: .85rem 2rem;
+            font-family: var(--font-l);
+            font-size: .82rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all .3s
+        }
+
+        .btn-outline:hover {
+            background: var(--gold-dim);
+            transform: translateY(-2px)
+        }
+
+        /* ── SECTIONS ── */
+        .sec {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .sec-full {
+            padding: 6rem 2rem
+        }
+
+        .sec-title {
+            text-align: center;
+            font-family: var(--font-l);
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            letter-spacing: 3px;
+            margin-bottom: .6rem;
+            color: var(--gold)
+        }
+
+        .sec-sub {
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--gray);
+            margin-bottom: 3.5rem;
+            font-style: italic
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 1rem auto 3.5rem
+        }
+
+        /* ── PROMOS ── */
+        .promos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem
+        }
+
+        .promo-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            transition: all .4s
+        }
+
+        .promo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            transform: scaleX(0);
+            transition: transform .5s
+        }
+
+        .promo-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(201, 168, 76, .4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .5), 0 0 30px rgba(201, 168, 76, .06)
+        }
+
+        .promo-card:hover::before {
+            transform: scaleX(1)
+        }
+
+        .promo-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+            opacity: .8
+        }
+
+        .promo-title {
+            font-family: var(--font-l);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-bottom: .5rem;
+            color: var(--cream)
+        }
+
+        .promo-free {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1
+        }
+
+        .promo-free span {
+            font-size: 1.1rem;
+            display: block;
+            opacity: .6;
+            color: var(--cream);
+            font-weight: 400;
+            margin-top: .3rem
+        }
+
+        /* ── DECANT ── */
+        .decant-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center
+        }
+
+        .decant-text p {
+            font-size: 1.2rem;
+            color: rgba(240, 232, 220, .8);
+            margin-bottom: 1.5rem;
+            line-height: 1.8
+        }
+
+        .decant-text strong {
+            color: var(--gold)
+        }
+
+        .decant-medals {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem
+        }
+
+        .medal {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all .35s
+        }
+
+        .medal:hover {
+            border-color: rgba(201, 168, 76, .5);
+            transform: translateX(6px)
+        }
+
+        .medal-ml {
+            font-family: var(--font-l);
+            font-size: 2.2rem;
+            color: var(--gold);
+            min-width: 70px
+        }
+
+        .medal-info strong {
+            display: block;
+            font-family: var(--font-l);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: .2rem
+        }
+
+        .medal-info span {
+            color: var(--gray);
+            font-size: .95rem
+        }
+
+        /* ── CATALOG ── */
+        #catalogo-wrap {
+            background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 50%, var(--bg) 100%)
+        }
+
+        .catalog-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem
+        }
+
+        .search-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 520px
+        }
+
+        .search-wrap i {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray)
+        }
+
+        .search-wrap input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            color: var(--cream);
+            font-family: var(--font-h);
+            font-size: 1.05rem;
+            outline: none;
+            transition: border-color .3s
+        }
+
+        .search-wrap input:focus {
+            border-color: var(--gold)
+        }
+
+        .search-wrap input::placeholder {
+            color: var(--gray)
+        }
+
+        .filters {
+            display: flex;
+            gap: .7rem;
+            flex-wrap: wrap;
+            justify-content: center
+        }
+
+        .fbtn {
+            background: transparent;
+            border: 1px solid #2a2a2a;
+            color: var(--gray);
+            padding: .45rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: var(--font-l);
+            font-size: .7rem;
+            letter-spacing: 1px;
+            transition: all .3s
+        }
+
+        .fbtn:hover,
+        .fbtn.active {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: var(--gold-dim)
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.8rem
+        }
+
+        /* Product Card */
+        .pcard {
+            background: var(--bg3);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #1e1e1e;
+            display: flex;
+            flex-direction: column;
+            transition: all .4s;
+            position: relative
+        }
+
+        .pcard:hover {
+            border-color: rgba(201, 168, 76, .35);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, .6), 0 0 20px rgba(201, 168, 76, .05)
+        }
+
+        .pcard-img {
+            height: 240px;
+            background: #0f0f0f;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .pcard-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s, opacity .4s;
+            opacity: .85
+        }
+
+        .pcard:hover .pcard-img img {
+            transform: scale(1.08);
+            opacity: 1
+        }
+
+        .pimg-fallback {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            color: rgba(201, 168, 76, .2);
+            font-size: 3.5rem
+        }
+
+        .pimg-fallback span {
+            font-family: var(--font-l);
+            font-size: .65rem;
+            letter-spacing: 2px;
+            color: rgba(201, 168, 76, .3)
+        }
+
+        /* brand badge */
+        .brand-badge {
+            position: absolute;
+            bottom: .8rem;
+            left: .8rem;
+            background: rgba(9, 9, 9, .8);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(8px);
+            padding: .25rem .7rem;
+            border-radius: 20px;
+            font-family: var(--font-l);
+            font-size: .58rem;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            z-index: 2
+        }
+
+        .pcard-body {
+            padding: 1.4rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column
+        }
+
+        .pcard-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--cream);
+            line-height: 1.2
+        }
+
+        .prices {
+            display: flex;
+            gap: .5rem;
+            margin-bottom: 1.2rem
+        }
+
+        .ppill {
+            flex: 1;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 8px;
+            padding: .5rem .3rem;
+            text-align: center
+        }
+
+        .ppill-ml {
+            font-family: var(--font-l);
+            font-size: .63rem;
+            color: var(--gold);
+            letter-spacing: .5px;
+            display: block;
+            margin-bottom: .2rem
+        }
+
+        .ppill-price {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--cream)
+        }
+
+        .pcard-wa {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #1a9e45, #25D366);
+            color: #fff;
+            padding: .8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: var(--font-l);
+            font-size: .72rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-top: auto;
+            transition: all .3s
+        }
+
+        .pcard-wa:hover {
+            filter: brightness(1.15);
+            transform: translateY(-1px)
+        }
+
+        .empty {
+            display: none;
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 4rem;
+            color: var(--gray);
+            font-size: 1.2rem;
+            font-style: italic
+        }
+
+        /* ── INFO (Entregas/Contacto) ── */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem
+        }
+
+        .ibox {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-top: 2px solid var(--gold)
+        }
+
+        .ibox h3 {
+            font-family: var(--font-l);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .ilist {
+            list-style: none
+        }
+
+        .ilist li {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            align-items: flex-start;
+            line-height: 1.5
+        }
+
+        .ilist i {
+            color: var(--gold);
+            margin-top: 4px;
+            flex-shrink: 0
+        }
+
+        .socials {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem
+        }
+
+        .soc {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 1.1rem;
+            border: 1px solid #222;
+            transition: all .3s
+        }
+
+        .soc:hover {
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+            transform: translateY(-3px)
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #040404;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--glass-border)
+        }
+
+        footer .logo {
+            justify-content: center;
+            margin-bottom: .8rem
+        }
+
+        footer p {
+            color: #555;
+            font-size: .9rem;
+            margin-top: .3rem
+        }
+
+        /* ── WA FLOAT ── */
+        .wa-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            text-decoration: none;
+            z-index: 998;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, .4);
+            animation: wapulse 2.5s infinite
+        }
+
+        .wa-float:hover {
+            transform: scale(1.12)
+        }
+
+        @keyframes wapulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, .6)
+            }
+
+            70% {
+                box-shadow: 0 0 0 16px rgba(37, 211, 102, 0)
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0)
+            }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width:900px) {
+
+            .decant-wrap,
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem
+            }
+        }
+
+        @media(max-width:640px) {
+            nav {
+                display: none
+            }
+
+            .hdr {
+                padding: 1rem
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header id="hdr">
+        <div class="hdr">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12,2C10.9,2 10,2.9 10,4L10,6.2C7.7,6.8 6,8.7 6,11L6,19C6,20.7 7.3,22 9,22L15,22C16.7,22 18,20.7 18,19L18,11C18,8.7 16.3,6.8 14,6.2L14,4C14,2.9 13.1,2 12,2M12,4C12.6,4 13,4.4 13,5L13,6L11,6L11,5C11,4.4 11.4,4 12,4M8,11C8,9.3 9.3,8 11,8L13,8C14.7,8 16,9.3 16,11L16,19C16,19.6 15.6,20 15,20L9,20C8.4,20 8,19.6 8,19L8,11Z" />
+                </svg>
+                <span class="logo-txt">PERFUME ADICTO</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#promos">Promociones</a></li>
+                    <li><a href="#decants">Decants</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#info">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/528443427065?text=Hola!%20Me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n"
+                target="_blank" class="btn-wa-hdr"><i class="fab fa-whatsapp"></i> Pedir Ahora</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div id="particles-js"></div>
+        <div class="hero-inner">
+            <span class="hero-kicker fi show" style="transition-delay:.1s">PERFUMERÍA DE DECANTS · SALTILLO, MX</span>
+            <h1 class="hero-h1 fi show" style="transition-delay:.25s">Tu Esencia,<br>Tu Adicción</h1>
+            <p class="hero-sub fi show" style="transition-delay:.4s">Fragancias de lujo auténticas en tu tamaño ideal
+            </p>
+            <div class="hero-btns fi show" style="transition-delay:.55s">
+                <a href="#catalogo" class="btn-gold">Ver Catálogo</a>
+                <a href="#decants" class="btn-outline">¿Qué es un decant?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMOS -->
+    <section id="promos" class="sec">
+        <p class="hero-kicker" style="text-align:center;margin-bottom:.5rem">OFERTAS ESPECIALES</p>
+        <h2 class="sec-title fi">Promociones Activas</h2>
+        <div class="divider"></div>
+        <div class="promos-grid">
+            <div class="promo-card fi fi-d1">
+                <div class="promo-icon"><i class="fas fa-gift"></i></div>
+                <div class="promo-title">COMPRAS DE $699</div>
+                <div class="promo-free">3ml <span>perfume sorpresa gratis</span></div>
+            </div>
+            <div class="promo-card fi fi-d2">
+                <div class="promo-icon"><i class="fas fa-star"></i></div>
+                <div class="promo-title">COMPRAS DE $799</div>
+                <div class="promo-free">5ml <span>perfume sorpresa gratis</span></div>
+            </div>
+            <div class="promo-card fi fi-d3">
+                <div class="promo-icon"><i class="fas fa-crown"></i></div>
+                <div class="promo-title">COMPRAS DE $999</div>
+                <div class="promo-free">10ml <span>perfume sorpresa gratis</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DECANT -->
+    <section id="decants" class="sec">
+        <p class="hero-kicker" style="text-align:center;margin-bottom:.5rem">APRENDE MÁS</p>
+        <h2 class="sec-title fi">El Arte del Decant</h2>
+        <div class="divider"></div>
+        <div class="decant-wrap">
+            <div class="decant-text fi">
+                <p>Un <strong>decant</strong> es una porción de tu fragancia favorita, extraída directamente del frasco
+                    original en un atomizador de menor tamaño bajo estrictas normas de higiene.</p>
+                <p>Es la forma perfecta de probar <strong>perfumes de diseñador y nicho</strong> durante días o semanas
+                    antes de comprometerte con una botella completa, o simplemente para llevar tu aroma favorito a donde
+                    vayas.</p>
+            </div>
+            <div class="decant-medals fi fi-d2">
+                <div class="medal">
+                    <div class="medal-ml">3ml</div>
+                    <div class="medal-info"><strong>~45 SPRAYS</strong><span>Ideal para probar la fragancia</span></div>
+                </div>
+                <div class="medal">
+                    <div class="medal-ml">5ml</div>
+                    <div class="medal-info"><strong>~75 SPRAYS</strong><span>Uso ocasional · Viaje · Gym</span></div>
+                </div>
+                <div class="medal">
+                    <div class="medal-ml">10ml</div>
+                    <div class="medal-info"><strong>~150 SPRAYS</strong><span>Uso diario prolongado</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOGO -->
+    <div id="catalogo-wrap">
+        <section id="catalogo" class="sec">
+            <p class="hero-kicker" style="text-align:center;margin-bottom:.5rem">DECANTS PREMIUM</p>
+            <h2 class="sec-title fi">Nuestro Catálogo</h2>
+            <div class="divider"></div>
+            <div class="catalog-controls fi">
+                <div class="search-wrap">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar por nombre o marca...">
+                </div>
+                <div class="filters" id="brandFilters">
+                    <button class="fbtn active" data-brand="all">Todos</button>
+                </div>
+            </div>
+            <div class="catalog-grid" id="grid">
+                <p class="empty" id="empty">No se encontraron resultados.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- INFO -->
+    <section id="info" class="sec">
+        <p class="hero-kicker" style="text-align:center;margin-bottom:.5rem">SALTILLO, COAHUILA</p>
+        <h2 class="sec-title fi">Entregas y Contacto</h2>
+        <div class="divider"></div>
+        <div class="info-grid">
+            <div class="ibox fi fi-d1">
+                <h3><i class="fas fa-map-marker-alt"></i> Puntos de Entrega</h3>
+                <ul class="ilist">
+                    <li><i class="fas fa-university"></i>
+                        <div><strong>TEC Saltillo</strong><br>Lunes a Viernes · 2pm – 9pm</div>
+                    </li>
+                    <li><i class="fas fa-tree"></i>
+                        <div><strong>Fundadores</strong><br>Fines de semana · Horario a coordinar</div>
+                    </li>
+                    <li><i class="fas fa-motorcycle"></i>
+                        <div><strong>Envío a Domicilio</strong><br>Dentro de Saltillo · Con costo extra</div>
+                    </li>
+                    <li><i class="fas fa-money-bill-wave"></i>
+                        <div><strong>Pago por Transferencia</strong><br>Te enviamos los datos al pedir</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="ibox fi fi-d2">
+                <h3><i class="fas fa-address-card"></i> Contáctanos</h3>
+                <ul class="ilist">
+                    <li><i class="fab fa-whatsapp"></i>
+                        <div><strong>WhatsApp</strong><br>844 342 7065</div>
+                    </li>
+                    <li><i class="fab fa-instagram"></i>
+                        <div><strong>Instagram</strong><br>@perfum_adicto</div>
+                    </li>
+                    <li><i class="fab fa-tiktok"></i>
+                        <div><strong>TikTok</strong><br>@perfume_adicto</div>
+                    </li>
+                </ul>
+                <div class="socials">
+                    <a href="https://wa.me/528443427065" target="_blank" class="soc"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/perfum_adicto" target="_blank" class="soc"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@perfume_adicto" target="_blank" class="soc"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="#" class="logo"><svg viewBox="0 0 24 24" style="width:24px;height:24px;fill:var(--gold)">
+                <path
+                    d="M12,2C10.9,2 10,2.9 10,4L10,6.2C7.7,6.8 6,8.7 6,11L6,19C6,20.7 7.3,22 9,22L15,22C16.7,22 18,20.7 18,19L18,11C18,8.7 16.3,6.8 14,6.2L14,4C14,2.9 13.1,2 12,2M12,4C12.6,4 13,4.4 13,5L13,6L11,6L11,5C11,4.4 11.4,4 12,4M8,11C8,9.3 9.3,8 11,8L13,8C14.7,8 16,9.3 16,11L16,19C16,19.6 15.6,20 15,20L9,20C8.4,20 8,19.6 8,19L8,11Z" />
+            </svg><span class="logo-txt">PERFUME ADICTO</span></a>
+        <p>Tu Esencia, Tu Adicción · Saltillo, Coahuila, México</p>
+        <p>&copy; 2025 Perfume Adicto. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- WA FLOAT -->
+    <a href="https://wa.me/528443427065?text=Hola!%20Me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n" target="_blank"
+        class="wa-float"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        // ── DATA ──
+        const perfumes = [
+            { name: "Le Male Elixir", brand: "Jean Paul Gaultier", p3: 170, p5: 200, p10: 350, img: "https://fimgs.net/mdimg/perfume/375x500.81642.jpg" },
+            { name: "Valentino EDT", brand: "Valentino", p3: 190, p5: 245, p10: 380, img: "https://fimgs.net/mdimg/perfume/375x500.19558.jpg" },
+            { name: "Erba Pura", brand: "Xerjoff", p3: 210, p5: 300, p10: 500, img: "https://fimgs.net/mdimg/perfume/375x500.55157.jpg" },
+            { name: "Azzaro Parfum Intense", brand: "Azzaro", p3: 110, p5: 160, p10: 260, img: "https://fimgs.net/mdimg/perfume/375x500.73664.jpg" },
+            { name: "Scandal Le Parfum", brand: "Jean Paul Gaultier", p3: 130, p5: 170, p10: 280, img: "https://fimgs.net/mdimg/perfume/375x500.74465.jpg" },
+            { name: "Invictus Elixir", brand: "Paco Rabanne", p3: 130, p5: 175, p10: 285, img: "https://fimgs.net/mdimg/perfume/375x500.78575.jpg" },
+            { name: "Le Beau", brand: "Jean Paul Gaultier", p3: 110, p5: 150, p10: 250, img: "https://fimgs.net/mdimg/perfume/375x500.55891.jpg" },
+            { name: "Hawas", brand: "Rasasi", p3: 85, p5: 100, p10: 170, img: "https://fimgs.net/mdimg/perfume/375x500.46890.jpg" },
+            { name: "Fakhar Black", brand: "Lattafa", p3: 85, p5: 100, p10: 150, img: "https://fimgs.net/mdimg/perfume/375x500.70465.jpg" },
+            { name: "Halloween Man X", brand: "Halloween", p3: 85, p5: 110, p10: 165, img: "https://fimgs.net/mdimg/perfume/375x500.53215.jpg" },
+            { name: "Vulcan Feu", brand: "Tiziana Terenzi", p3: 95, p5: 120, p10: 190, img: "https://fimgs.net/mdimg/perfume/375x500.105520.jpg" },
+            { name: "Hawas Tropical", brand: "Rasasi", p3: 120, p5: 145, p10: 190, img: "https://fimgs.net/mdimg/perfume/375x500.92837.jpg" },
+            { name: "Island Khadlaj", brand: "Khadlaj", p3: 95, p5: 120, p10: 190, img: "https://fimgs.net/mdimg/perfume/375x500.102362.jpg" },
+            { name: "Nautica Voyage", brand: "Nautica", p3: 75, p5: 90, p10: 130, img: "https://fimgs.net/mdimg/perfume/375x500.435.jpg" },
+            { name: "Nautica Heritage", brand: "Nautica", p3: 75, p5: 90, p10: 130, img: "https://fimgs.net/mdimg/perfume/375x500.57679.jpg" },
+            { name: "Yara", brand: "Lattafa", p3: 90, p5: 110, p10: 170, img: "https://fimgs.net/mdimg/perfume/375x500.63345.jpg" },
+            { name: "Le Male le Parfum", brand: "Jean Paul Gaultier", p3: 185, p5: 250, p10: 390, img: "https://fimgs.net/mdimg/perfume/375x500.61856.jpg" },
+            { name: "Eros Flame", brand: "Versace", p3: 120, p5: 170, p10: 250, img: "https://fimgs.net/mdimg/perfume/375x500.52002.jpg" },
+            { name: "Aqua Dubai", brand: "Paris Corner", p3: 120, p5: 150, p10: 230, img: "https://fimgs.net/mdimg/perfume/375x500.96482.jpg" },
+            { name: "Kamrah", brand: "Khadlaj", p3: 110, p5: 120, p10: 190, img: "https://fimgs.net/mdimg/perfume/375x500.75805.jpg" },
+            { name: "Rome Extrados", brand: "Pendora Scent", p3: 90, p5: 105, p10: 160, img: "https://fimgs.net/mdimg/perfume/375x500.79905.jpg" },
+            { name: "Valentino Intense", brand: "Valentino", p3: 180, p5: 240, p10: 370, img: "https://fimgs.net/mdimg/perfume/375x500.38254.jpg" },
+            { name: "Coral Fantasy", brand: "Valentino", p3: 175, p5: 230, p10: 340, img: "https://fimgs.net/mdimg/perfume/375x500.72144.jpg" },
+            { name: "Eter Arabia", brand: "Xerjoff", p3: 120, p5: 140, p10: 200, img: "https://fimgs.net/mdimg/perfume/375x500.91434.jpg" },
+            { name: "Mandarin Elixir", brand: "Odyssey", p3: 115, p5: 140, p10: 190, img: "https://fimgs.net/mdimg/perfume/375x500.106709.jpg" },
+            { name: "Jazz Club", brand: "Maison Margiela Replica", p3: 170, p5: 230, p10: 380, img: "https://fimgs.net/mdimg/perfume/375x500.20541.jpg" },
+            { name: "Arabians Tonka", brand: "Montale", p3: 170, p5: 225, p10: 390, img: "https://fimgs.net/mdimg/perfume/375x500.56911.jpg" },
+            { name: "Wildcard", brand: "Lattafa", p3: 130, p5: 160, p10: 245, img: "https://fimgs.net/mdimg/perfume/375x500.79532.jpg" },
+            { name: "Eclaire", brand: "Fragrance World", p3: 110, p5: 125, p10: 170, img: "https://fimgs.net/mdimg/perfume/375x500.93628.jpg" },
+            { name: "Untold", brand: "Armaf", p3: 100, p5: 130, p10: 190, img: "https://fimgs.net/mdimg/perfume/375x500.79541.jpg" },
+            { name: "Asas Bourbon", brand: "Lattafa", p3: 120, p5: 140, p10: 175, img: "https://fimgs.net/mdimg/perfume/375x500.101124.jpg" },
+            { name: "Liquid Brun", brand: "Guam", p3: 120, p5: 130, p10: 190, img: "https://fimgs.net/mdimg/perfume/375x500.94713.jpg" },
+            { name: "Hawas Ice", brand: "Rasasi", p3: 110, p5: 130, p10: 185, img: "https://fimgs.net/mdimg/perfume/375x500.84084.jpg" },
+            { name: "Hawas Viper", brand: "Rasasi", p3: 85, p5: 110, p10: 165, img: "https://fimgs.net/mdimg/perfume/375x500.98118.jpg" },
+            { name: "YSL Y EDP", brand: "Yves Saint Laurent", p3: 140, p5: 190, p10: 330, img: "https://fimgs.net/mdimg/perfume/375x500.50757.jpg" },
+            { name: "Profondo Parfum", brand: "Giorgio Armani", p3: 150, p5: 210, p10: 350, img: "https://fimgs.net/mdimg/perfume/375x500.89456.jpg" },
+            { name: "Myself EDP", brand: "Yves Saint Laurent", p3: 150, p5: 210, p10: 350, img: "https://fimgs.net/mdimg/perfume/375x500.84094.jpg" },
+            { name: "Le beau le Parfum", brand: "Jean Paul Gaultier", p3: 160, p5: 215, p10: 360, img: "https://fimgs.net/mdimg/perfume/375x500.72158.jpg" }
+        ];
+
+        const grid = document.getElementById('grid');
+        const empty = document.getElementById('empty');
+        const filtersCont = document.getElementById('brandFilters');
+        const searchInp = document.getElementById('searchInput');
+
+        // Build brand filters
+        const brands = [...new Set(perfumes.map(p => p.brand))].sort();
+        brands.forEach(b => {
+            const btn = document.createElement('button');
+            btn.className = 'fbtn'; btn.dataset.brand = b; btn.textContent = b;
+            filtersCont.appendChild(btn);
+        });
+
+        function activeBrand() { return document.querySelector('.fbtn.active')?.dataset.brand || 'all'; }
+
+        filtersCont.addEventListener('click', e => {
+            const btn = e.target.closest('.fbtn');
+            if (!btn) return;
+            document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            render();
+        });
+        searchInp.addEventListener('input', render);
+
+        function render() {
+            const q = searchInp.value.toLowerCase().trim();
+            const brand = activeBrand();
+            const list = perfumes.filter(p => {
+                const ms = !q || p.name.toLowerCase().includes(q) || p.brand.toLowerCase().includes(q);
+                const mb = brand === 'all' || p.brand === brand;
+                return ms && mb;
+            });
+            // clear
+            grid.innerHTML = ''; grid.appendChild(empty);
+            empty.style.display = list.length ? 'none' : 'block';
+            list.forEach((p, i) => {
+                const msg = encodeURIComponent(`Hola! Me interesa el decant de ${p.name} de ${p.brand}. ¿Podrías darme más información?`);
+                const wa = `https://wa.me/528443427065?text=${msg}`;
+                const card = document.createElement('div');
+                card.className = 'pcard fi';
+                card.style.transitionDelay = `${(i % 4) * 0.08}s`;
+                card.innerHTML = `
+      <div class="pcard-img">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
+        <div class="pimg-fallback"><i class="fas fa-flask"></i><span>DECANT</span></div>
+        <div class="brand-badge">${p.brand.toUpperCase()}</div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-name">${p.name}</div>
+        <div class="prices">
+          <div class="ppill"><span class="ppill-ml">3ml</span><span class="ppill-price">$${p.p3}</span></div>
+          <div class="ppill"><span class="ppill-ml">5ml</span><span class="ppill-price">$${p.p5}</span></div>
+          <div class="ppill"><span class="ppill-ml">10ml</span><span class="ppill-price">$${p.p10}</span></div>
+        </div>
+        <a href="${wa}" target="_blank" class="pcard-wa"><i class="fab fa-whatsapp"></i> Lo Quiero</a>
+      </div>`;
+                grid.appendChild(card);
+                requestAnimationFrame(() => requestAnimationFrame(() => card.classList.add('show')));
+            });
+        }
+        render();
+
+        // ── SCROLL ANIMATIONS ──
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); obs.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fi').forEach(el => {
+            if (!el.classList.contains('show')) obs.observe(el);
+        });
+
+        // ── HEADER SCROLL ──
+        const hdr = document.getElementById('hdr');
+        window.addEventListener('scroll', () => {
+            hdr.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+
+        // ── PARTICLES ──
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 35, density: { enable: true, value_area: 900 } },
+                color: { value: "#C9A84C" },
+                opacity: { value: 0.4, random: true, anim: { enable: true, speed: 0.8, opacity_min: 0.05, sync: false } },
+                size: { value: 2.5, random: true },
+                line_linked: { enable: false },
+                move: { enable: true, speed: 0.6, direction: "top", random: true, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "bubble" }, resize: true },
+                modes: { bubble: { distance: 180, size: 3.5, duration: 2, opacity: 0.8 } }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+
+</html>
