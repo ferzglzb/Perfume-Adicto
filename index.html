@@ -24,8 +24,10 @@
             --gold2: #e8cc7a;
             --gold-dim: rgba(201, 168, 76, .12);
             --cream: #F0E8DC;
-            --gray: #888;
-            --gray2: #555;
+            --gray: #9a9a9a;
+            /* improved contrast from #888 */
+            --gray2: #666;
+            /* improved from #555 */
             --fh: 'Cormorant Garamond', serif;
             --fl: 'Cinzel', serif;
             --glass: rgba(255, 255, 255, .04);
@@ -179,7 +181,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 2rem;
+            gap: 0;
             opacity: 0;
             pointer-events: none;
             transition: opacity .35s ease;
@@ -190,25 +192,37 @@
             pointer-events: all
         }
 
+        .nav-drawer .drawer-brand {
+            font-family: var(--fl);
+            font-size: .55rem;
+            letter-spacing: 5px;
+            color: var(--gold);
+            opacity: .5;
+            margin-bottom: 2.5rem;
+            border-bottom: none;
+            padding: 0;
+        }
+
         .nav-drawer a {
             color: var(--cream);
             text-decoration: none;
             font-family: var(--fl);
-            font-size: 1.1rem;
+            font-size: .95rem;
             letter-spacing: 3px;
-            padding: 1rem 2rem;
+            padding: 1.1rem 2rem;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, .06);
+            border-bottom: 1px solid rgba(255, 255, 255, .04);
             width: 100%;
             transition: color .25s;
         }
 
-        .nav-drawer a:hover {
-            color: var(--gold)
+        .nav-drawer a:active {
+            color: var(--gold);
+            background: var(--gold-dim);
         }
 
         .nav-drawer .drawer-wa {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             background: linear-gradient(135deg, #1faa55, #25D366);
             color: #fff;
             border-radius: var(--radius-sm);
@@ -282,6 +296,19 @@
             overflow: hidden;
         }
 
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(90vw, 500px);
+            height: min(90vw, 500px);
+            background: radial-gradient(ellipse, rgba(201, 168, 76, .07) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
         #particles-js {
             position: absolute;
             inset: 0;
@@ -297,12 +324,13 @@
 
         .hero-kicker {
             font-family: var(--fl);
-            font-size: .65rem;
-            letter-spacing: 5px;
+            font-size: .6rem;
+            letter-spacing: 4px;
             color: var(--gold);
-            opacity: .8;
-            margin-bottom: 1.2rem;
-            display: block
+            opacity: .7;
+            margin-bottom: 1.4rem;
+            display: block;
+            line-height: 1.6;
         }
 
         .hero-h1 {
@@ -402,10 +430,10 @@
 
         .kicker {
             font-family: var(--fl);
-            font-size: .62rem;
+            font-size: .6rem;
             letter-spacing: 5px;
             color: var(--gold);
-            opacity: .8;
+            opacity: .7;
             text-align: center;
             display: block;
             margin-bottom: .4rem
@@ -427,7 +455,36 @@
             margin: .8rem auto 2.5rem
         }
 
+        /* ── TRUST BADGES ── */
+        .trust-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 2.5rem 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, .04);
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray);
+            font-family: var(--fl);
+            font-size: .6rem;
+            letter-spacing: 1.5px;
+        }
+
+        .trust-badge i {
+            color: var(--gold);
+            font-size: .85rem;
+        }
+
         /* ── PROMOS ── */
+        #promos-wrap {
+            background: linear-gradient(180deg, rgba(201, 168, 76, .03) 0%, transparent 100%);
+        }
+
         .promos-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -469,37 +526,54 @@
         }
 
         .promo-icon {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--gold);
             flex-shrink: 0;
-            width: 44px;
-            text-align: center
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold-dim);
+            border-radius: 50%;
         }
 
-        .promo-body {}
+        .promo-body {
+            display: flex;
+            flex-direction: column;
+        }
 
         .promo-title {
             font-family: var(--fl);
-            font-size: .7rem;
+            font-size: .65rem;
             letter-spacing: 2px;
             color: var(--gray);
-            margin-bottom: .2rem
+            margin-bottom: .3rem
+        }
+
+        .promo-val {
+            font-family: var(--fl);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cream);
+            line-height: 1;
+            margin-bottom: .2rem;
         }
 
         .promo-free {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 1.1rem;
+            font-weight: 600;
             color: var(--gold);
-            line-height: 1
+            line-height: 1.3;
         }
 
         .promo-free span {
-            font-size: .95rem;
+            font-size: .85rem;
             display: block;
-            opacity: .65;
+            opacity: .55;
             color: var(--cream);
             font-weight: 400;
-            margin-top: .2rem
+            margin-top: .15rem
         }
 
         /* ── DECANT ── */
@@ -564,6 +638,19 @@
             background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 60%, var(--bg) 100%)
         }
 
+        .result-count {
+            text-align: center;
+            font-family: var(--fl);
+            font-size: .6rem;
+            letter-spacing: 2px;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .result-count strong {
+            color: var(--gold);
+        }
+
         .catalog-controls {
             display: flex;
             flex-direction: column;
@@ -597,6 +684,7 @@
             outline: none;
             transition: border-color .3s;
             -webkit-appearance: none;
+            appearance: none;
         }
 
         .search-wrap input:focus {
@@ -741,10 +829,15 @@
         }
 
         .pcard-name {
-            font-size: 1.1rem;
+            font-size: clamp(.95rem, 3.5vw, 1.15rem);
             font-weight: 600;
             color: var(--cream);
-            line-height: 1.2
+            line-height: 1.25;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .prices {
@@ -809,6 +902,10 @@
         }
 
         /* ── INFO ── */
+        #info-wrap {
+            background: linear-gradient(180deg, transparent 0%, rgba(201, 168, 76, .025) 50%, transparent 100%);
+        }
+
         .info-grid {
             display: flex;
             flex-direction: column;
@@ -827,7 +924,7 @@
 
         .ibox h3 {
             font-family: var(--fl);
-            font-size: .9rem;
+            font-size: .85rem;
             letter-spacing: 2px;
             color: var(--gold);
             margin-bottom: 1.5rem;
@@ -847,6 +944,16 @@
             font-size: 1rem;
             align-items: flex-start;
             line-height: 1.5
+        }
+
+        .ilist li a {
+            color: var(--cream);
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        .ilist li a:active {
+            color: var(--gold);
         }
 
         .ilist i {
@@ -884,25 +991,46 @@
             border-color: var(--gold)
         }
 
+        /* ── FOOTER CTA ── */
+        .footer-cta {
+            background: linear-gradient(180deg, var(--bg) 0%, #0d0d0d 100%);
+            padding: 3.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-cta h3 {
+            font-family: var(--fl);
+            font-size: clamp(1.1rem, 4vw, 1.6rem);
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: .6rem;
+        }
+
+        .footer-cta p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
         /* ── FOOTER ── */
         footer {
             background: #040404;
-            padding: 2.5rem 1.5rem;
+            padding: 2rem 1.5rem;
             text-align: center;
-            border-top: 1px solid var(--gb);
+            border-top: 1px solid rgba(255, 255, 255, .04);
             margin-bottom: 72px
-                /* space for sticky bar */
         }
 
         footer .logo {
             justify-content: center;
-            margin-bottom: .7rem
+            margin-bottom: .5rem
         }
 
         footer p {
-            color: #555;
-            font-size: .85rem;
-            margin-top: .25rem
+            color: var(--gray2);
+            font-size: .82rem;
+            margin-top: .2rem
         }
 
         /* ── STICKY WA BAR (mobile) ── */
@@ -961,7 +1089,12 @@
             }
 
             .promo-icon {
-                width: auto
+                width: 56px;
+                height: 56px;
+            }
+
+            .trust-row {
+                gap: 3rem;
             }
         }
 
@@ -1163,6 +1296,7 @@
 
     <!-- Mobile Drawer -->
     <div class="nav-drawer" id="navDrawer">
+        <span class="drawer-brand">TU ESENCIA, TU ADICCIÓN</span>
         <a href="#promos" class="drawer-link">PROMOCIONES</a>
         <a href="#decants" class="drawer-link">¿QUÉ ES UN DECANT?</a>
         <a href="#catalogo" class="drawer-link">CATÁLOGO</a>
@@ -1185,35 +1319,47 @@
         </div>
     </section>
 
+    <!-- TRUST BADGES -->
+    <div class="trust-row fi show" style="transition-delay:.6s">
+        <div class="trust-badge"><i class="fas fa-check-circle"></i> 100% AUTÉNTICO</div>
+        <div class="trust-badge"><i class="fas fa-shield-alt"></i> HIGIENE GARANTIZADA</div>
+        <div class="trust-badge"><i class="fas fa-bolt"></i> ENTREGA EN EL DÍA</div>
+    </div>
+
     <!-- PROMOS -->
-    <section id="promos" class="sec">
-        <span class="kicker fi">OFERTAS ESPECIALES</span>
-        <h2 class="sec-title fi d1">Promociones</h2>
-        <div class="divider"></div>
-        <div class="promos-grid">
-            <div class="promo-card fi d1">
-                <div class="promo-icon"><i class="fas fa-gift"></i></div>
-                <div class="promo-body">
-                    <div class="promo-title">COMPRAS DE $699</div>
-                    <div class="promo-free">3ml <span>perfume sorpresa gratis</span></div>
+    <div id="promos-wrap">
+        <section id="promos" class="sec">
+            <span class="kicker fi">OFERTAS ESPECIALES</span>
+            <h2 class="sec-title fi d1">Promociones</h2>
+            <div class="divider"></div>
+            <div class="promos-grid">
+                <div class="promo-card fi d1">
+                    <div class="promo-icon"><i class="fas fa-gift"></i></div>
+                    <div class="promo-body">
+                        <div class="promo-title">COMPRAS DESDE</div>
+                        <div class="promo-val">$699</div>
+                        <div class="promo-free">+ 3ml gratis <span>perfume sorpresa</span></div>
+                    </div>
+                </div>
+                <div class="promo-card fi d2">
+                    <div class="promo-icon"><i class="fas fa-star"></i></div>
+                    <div class="promo-body">
+                        <div class="promo-title">COMPRAS DESDE</div>
+                        <div class="promo-val">$799</div>
+                        <div class="promo-free">+ 5ml gratis <span>perfume sorpresa</span></div>
+                    </div>
+                </div>
+                <div class="promo-card fi d3">
+                    <div class="promo-icon"><i class="fas fa-crown"></i></div>
+                    <div class="promo-body">
+                        <div class="promo-title">COMPRAS DESDE</div>
+                        <div class="promo-val">$999</div>
+                        <div class="promo-free">+ 10ml gratis <span>perfume sorpresa</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="promo-card fi d2">
-                <div class="promo-icon"><i class="fas fa-star"></i></div>
-                <div class="promo-body">
-                    <div class="promo-title">COMPRAS DE $799</div>
-                    <div class="promo-free">5ml <span>perfume sorpresa gratis</span></div>
-                </div>
-            </div>
-            <div class="promo-card fi d3">
-                <div class="promo-icon"><i class="fas fa-crown"></i></div>
-                <div class="promo-body">
-                    <div class="promo-title">COMPRAS DE $999</div>
-                    <div class="promo-free">10ml <span>perfume sorpresa gratis</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- DECANT -->
     <section id="decants" class="sec">
@@ -1262,6 +1408,7 @@
                     </div>
                 </div>
             </div>
+            <div class="result-count" id="resultCount"></div>
             <div class="catalog-grid" id="grid">
                 <p class="empty" id="empty">No se encontraron resultados.</p>
             </div>
@@ -1269,61 +1416,75 @@
     </div>
 
     <!-- INFO -->
-    <section id="info" class="sec">
-        <span class="kicker fi">SALTILLO, COAHUILA</span>
-        <h2 class="sec-title fi d1">Entregas y Contacto</h2>
-        <div class="divider"></div>
-        <div class="info-grid">
-            <div class="ibox fi d1">
-                <h3><i class="fas fa-map-marker-alt"></i> Puntos de Entrega</h3>
-                <ul class="ilist">
-                    <li><i class="fas fa-university"></i>
-                        <div><strong>TEC Saltillo</strong><br>Lunes a Viernes · 2pm – 9pm</div>
-                    </li>
-                    <li><i class="fas fa-tree"></i>
-                        <div><strong>Fundadores</strong><br>Fines de semana · Horario a coordinar</div>
-                    </li>
-                    <li><i class="fas fa-motorcycle"></i>
-                        <div><strong>Envío a Domicilio</strong><br>Dentro de Saltillo · Con costo extra</div>
-                    </li>
-                    <li><i class="fas fa-money-bill-wave"></i>
-                        <div><strong>Pago por Transferencia</strong><br>Te mandamos los datos al pedir</div>
-                    </li>
-                </ul>
-            </div>
-            <div class="ibox fi d2">
-                <h3><i class="fas fa-address-card"></i> Síguenos</h3>
-                <ul class="ilist">
-                    <li><i class="fab fa-whatsapp"></i>
-                        <div><strong>WhatsApp</strong><br>844 342 7065</div>
-                    </li>
-                    <li><i class="fab fa-instagram"></i>
-                        <div><strong>Instagram</strong><br>@perfum_adicto</div>
-                    </li>
-                    <li><i class="fab fa-tiktok"></i>
-                        <div><strong>TikTok</strong><br>@perfume_adicto</div>
-                    </li>
-                </ul>
-                <div class="socials">
-                    <a href="https://wa.me/528443427065" target="_blank" class="soc" aria-label="WhatsApp"><i
-                            class="fab fa-whatsapp"></i></a>
-                    <a href="https://instagram.com/perfum_adicto" target="_blank" class="soc" aria-label="Instagram"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://tiktok.com/@perfume_adicto" target="_blank" class="soc" aria-label="TikTok"><i
-                            class="fab fa-tiktok"></i></a>
+    <div id="info-wrap">
+        <section id="info" class="sec">
+            <span class="kicker fi">SALTILLO, COAHUILA</span>
+            <h2 class="sec-title fi d1">Entregas y Contacto</h2>
+            <div class="divider"></div>
+            <div class="info-grid">
+                <div class="ibox fi d1">
+                    <h3><i class="fas fa-map-marker-alt"></i> Puntos de Entrega</h3>
+                    <ul class="ilist">
+                        <li><i class="fas fa-university"></i>
+                            <div><strong>TEC Saltillo</strong><br>Lunes a Viernes · 2pm – 9pm</div>
+                        </li>
+                        <li><i class="fas fa-tree"></i>
+                            <div><strong>Fundadores</strong><br>Fines de semana · Horario a coordinar</div>
+                        </li>
+                        <li><i class="fas fa-motorcycle"></i>
+                            <div><strong>Envío a Domicilio</strong><br>Dentro de Saltillo · Con costo extra</div>
+                        </li>
+                        <li><i class="fas fa-money-bill-wave"></i>
+                            <div><strong>Pago por Transferencia</strong><br>Te mandamos los datos al pedir</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ibox fi d2">
+                    <h3><i class="fas fa-address-card"></i> Síguenos</h3>
+                    <ul class="ilist">
+                        <li><i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/528443427065" target="_blank"><strong>WhatsApp</strong><br>844 342
+                                7065</a>
+                        </li>
+                        <li><i class="fab fa-instagram"></i>
+                            <a href="https://instagram.com/perfum_adicto"
+                                target="_blank"><strong>Instagram</strong><br>@perfum_adicto</a>
+                        </li>
+                        <li><i class="fab fa-tiktok"></i>
+                            <a href="https://tiktok.com/@perfume_adicto"
+                                target="_blank"><strong>TikTok</strong><br>@perfume_adicto</a>
+                        </li>
+                    </ul>
+                    <div class="socials">
+                        <a href="https://wa.me/528443427065" target="_blank" class="soc" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/perfum_adicto" target="_blank" class="soc"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@perfume_adicto" target="_blank" class="soc" aria-label="TikTok"><i
+                                class="fab fa-tiktok"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+
+    <!-- FOOTER CTA -->
+    <div class="footer-cta">
+        <h3 class="fi">¿Listo para encontrar tu aroma?</h3>
+        <p class="fi d1">Escríbenos y te ayudamos a elegir el perfume perfecto para ti.</p>
+        <a href="https://wa.me/528443427065?text=Hola!%20Me%20gustar%C3%ADa%20asesor%C3%ADa%20para%20elegir%20un%20perfume"
+            target="_blank" class="btn-gold fi d2" style="max-width:280px;margin:0 auto"><i class="fab fa-whatsapp"></i>
+            Quiero Asesoría</a>
+    </div>
 
     <!-- FOOTER -->
     <footer>
-        <a href="#" class="logo"><svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--gold)">
+        <a href="#" class="logo"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:var(--gold)">
                 <path
                     d="M12,2C10.9,2 10,2.9 10,4L10,6.2C7.7,6.8 6,8.7 6,11L6,19C6,20.7 7.3,22 9,22L15,22C16.7,22 18,20.7 18,19L18,11C18,8.7 16.3,6.8 14,6.2L14,4C14,2.9 13.1,2 12,2M12,4C12.6,4 13,4.4 13,5L13,6L11,6L11,5C11,4.4 11.4,4 12,4M8,11C8,9.3 9.3,8 11,8L13,8C14.7,8 16,9.3 16,11L16,19C16,19.6 15.6,20 15,20L9,20C8.4,20 8,19.6 8,19L8,11Z" />
-            </svg><span class="logo-txt" style="font-size:.9rem">PERFUME ADICTO</span></a>
-        <p>Tu Esencia, Tu Adicción · Saltillo, Coahuila, México</p>
-        <p>&copy; 2025 Perfume Adicto. Todos los derechos reservados.</p>
+            </svg><span class="logo-txt" style="font-size:.85rem">PERFUME ADICTO</span></a>
+        <p>Tu Esencia, Tu Adicción · Saltillo, Coahuila</p>
+        <p>&copy; 2025 Perfume Adicto</p>
     </footer>
 
     <!-- Sticky WA bar (mobile) / Float (desktop) -->
@@ -1422,6 +1583,13 @@
             });
             grid.innerHTML = ''; grid.appendChild(empty);
             empty.style.display = list.length ? 'none' : 'block';
+            // Update result count
+            const rc = document.getElementById('resultCount');
+            if (q || brand !== 'all') {
+                rc.innerHTML = `<strong>${list.length}</strong> RESULTADO${list.length !== 1 ? 'S' : ''}`;
+            } else {
+                rc.innerHTML = `<strong>${list.length}</strong> FRAGANCIAS DISPONIBLES`;
+            }
             list.forEach((p, i) => {
                 const msg = encodeURIComponent(`Hola! Me interesa el decant de ${p.name} de ${p.brand}. ¿Podrías darme más información?`);
                 const card = document.createElement('div');
