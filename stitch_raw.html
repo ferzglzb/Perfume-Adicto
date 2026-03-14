@@ -1,0 +1,321 @@
+<!-- Perfume Adicto Luxury Landing Page -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perfume Adicto</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c9a74a",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#1f1c13",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/20 px-10 py-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined" style="font-size: 28px;">water_drop</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-serif font-bold leading-tight tracking-wider uppercase">Perfume Adicto</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal uppercase tracking-widest" href="#">Discover</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal uppercase tracking-widest" href="#">Collections</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal uppercase tracking-widest" href="#">About Us</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal uppercase tracking-widest" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden lg:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full border border-primary/30 overflow-hidden bg-background-light dark:bg-black/20">
+<div class="text-slate-500 dark:text-slate-400 flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-full text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-0 border-none bg-transparent placeholder:text-slate-500 dark:placeholder:text-slate-400 px-2 text-sm font-normal leading-normal" placeholder="Search fragrances..." value=""/>
+</div>
+</label>
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-colors relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-background-dark">2</span>
+</button>
+</div>
+</header>
+<main class="flex-1 w-full max-w-7xl mx-auto flex flex-col pt-8 pb-16 gap-16 px-6 lg:px-10">
+<section class="@container">
+<div class="flex flex-col gap-10 @[864px]:flex-row items-center relative rounded-2xl overflow-hidden bg-gradient-to-br from-black/40 to-black/10 dark:from-black/60 dark:to-black/30 border border-primary/20 p-8 lg:p-16 backdrop-blur-sm">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&amp;fit=crop&amp;q=80')] bg-cover bg-center opacity-10 mix-blend-overlay pointer-events-none" data-alt="Abstract luxurious golden fluid waves"></div>
+<div class="flex flex-col gap-8 @[480px]:min-w-[400px] @[864px]:w-1/2 z-10">
+<div class="flex flex-col gap-4 text-left">
+<span class="text-primary text-sm font-bold uppercase tracking-[0.2em]">Exquisite Decants</span>
+<h1 class="text-slate-900 dark:text-white text-5xl font-serif font-bold leading-tight @[480px]:text-6xl lg:text-7xl">
+                                    The Art of Scent,<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-200 to-primary">Decanted.</span>
+</h1>
+<p class="text-slate-700 dark:text-slate-300 text-base font-medium leading-relaxed max-w-lg mt-4 @[480px]:text-lg">
+                                    Experience the world's most coveted fragrances, meticulously hand-decanted into luxurious travel sizes. Authenticity guaranteed.
+                                </p>
+</div>
+<div class="flex gap-4 items-center">
+<button class="flex cursor-pointer items-center justify-center rounded-full h-14 px-8 bg-primary text-background-dark text-base font-bold uppercase tracking-wider hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(201,167,74,0.3)]">
+                                    Explore Collection
+                                </button>
+<button class="flex cursor-pointer items-center justify-center rounded-full h-14 px-8 border-2 border-primary text-primary text-base font-bold uppercase tracking-wider hover:bg-primary/10 transition-all">
+                                    How it Works
+                                </button>
+</div>
+</div>
+<div class="w-full @[864px]:w-1/2 flex justify-center items-center z-10 relative">
+<div class="absolute w-64 h-64 bg-primary/20 rounded-full blur-[100px]"></div>
+<img alt="Luxurious perfume bottle floating" class="rounded-xl shadow-2xl border border-primary/30 object-cover w-full max-w-md aspect-[3/4]" data-alt="Elegant glass perfume bottle with gold accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrGSzAJlg9aC35wwhtjyVeXoe03-N0gyFWPJdp2F3LUCqm03fFRs3lDPu0APRlb_egMRZrrNmvWCWvk3PluBiSpNqgtRTBf8nIslSc44JxeEram8BSnaqxSpAGgLv3dLwd2Ftj49YxWBRXZv0tJPW23L0ozxj7YLKUrXJRfUx4QLqkc3doj7Vb4yJY7tlBaYOZYR3haT-e6QwP1Dp_eMfgVnkir8FTXW0-XcmXi9C4biiLXWL3fFSfvitUbhMwKI4OB03fNVVqxgNm"/>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-8">
+<div class="flex items-end justify-between px-2">
+<div class="flex flex-col gap-2">
+<span class="text-primary text-xs font-bold uppercase tracking-[0.2em]">Curated Selection</span>
+<h2 class="text-slate-900 dark:text-white text-3xl font-serif font-bold leading-tight">Featured Fragrances</h2>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-full h-10 w-10 border border-primary/30 text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="flex items-center justify-center rounded-full h-10 w-10 border border-primary/30 text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden px-2">
+<div class="flex flex-col gap-5 rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 shadow-lg min-w-[280px] max-w-[320px] snap-center p-4 backdrop-blur-md group hover:border-primary/40 transition-all">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl relative overflow-hidden bg-background-light dark:bg-black/40 flex items-center justify-center">
+<img alt="Creed Aventus Perfume Bottle" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Classic premium perfume bottle design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAeQb00ATZ9woGWstyj9cvkgFWAh_p_Y0Ie56csR0Tx6H4pD22_2qszxHS4cvElJiCeT6HqWPlkSCyd2w-vCvp19mbUvMz7GTlQNp3lj4C3wTm5dcDjjRkZJ9_bJnbCgvThVuoXHz4woSaFuw2A6TTVEHk-UPr55-vFxqbQ8Z61mDVkiX5SDZesFChseuxI6rbncpHCX5O5RhjyNLyVxo2s14tKzIVf8TOpY5vMvjoV4_RYKzSyc2yQVTKD3ONnSS98repd1JJSWAq"/>
+<div class="absolute top-3 left-3 bg-background-dark/80 text-primary text-xs font-bold px-2 py-1 rounded backdrop-blur-sm uppercase tracking-wider">Best Seller</div>
+</div>
+<div class="flex flex-col gap-3">
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-serif font-bold leading-snug">Creed Aventus</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium tracking-wide">Woody, Fruity</p>
+</div>
+<div class="flex flex-col gap-1.5 mt-2">
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 w-12">Fruity</span>
+<div class="flex-1 h-1.5 bg-black/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary/80 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 w-12">Woody</span>
+<div class="flex-1 h-1.5 bg-black/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary/60 rounded-full" style="width: 70%"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 w-12">Smoky</span>
+<div class="flex-1 h-1.5 bg-black/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary/40 rounded-full" style="width: 50%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2 pt-4 border-t border-primary/10">
+<span class="text-slate-900 dark:text-white font-bold">From $25</span>
+<button class="flex items-center justify-center rounded-full h-8 px-4 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider hover:bg-primary hover:text-background-dark transition-colors">
+                                        Select Size
+                                    </button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-5 rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 shadow-lg min-w-[280px] max-w-[320px] snap-center p-4 backdrop-blur-md group hover:border-primary/40 transition-all">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl relative overflow-hidden bg-background-light dark:bg-black/40 flex items-center justify-center">
+<img alt="Baccarat Rouge 540 Perfume Bottle" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Red crystal perfume bottle decant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlV40hH2x3VYHJGZKnVZJbMgdTN0kUwwYdhesakaP7tIx-8l3JYDcNGh52HnU24gFDhfgEl_OBfqrt_xJcCZhSDcvCQREXnIBDNiL6QZMI3sBzMAcJKEBvJf02g1YokwcA1upDnsjMp5KAMIa3ogAl7gvDFAlNJ88vQ5g6slmqh0MMR400Jr5A25r2DzurfnnyAhFJoXD9PkwXK_iU1ZqF2omovCy4nO4tXI2OuL-zFwSOnVZ_x636Bc91sR40HcxS5q9WuN2EoA48"/>
+<div class="absolute top-3 left-3 bg-background-dark/80 text-primary text-xs font-bold px-2 py-1 rounded backdrop-blur-sm uppercase tracking-wider">Trending</div>
+</div>
+<div class="flex flex-col gap-3">
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-serif font-bold leading-snug">Baccarat Rouge 540</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium tracking-wide">Amber, Floral</p>
+</div>
+<div class="flex flex-col gap-1.5 mt-2">
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 w-12">Amber</span>
+<div class="flex-1 h-1.5 bg-black/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary/80 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 w-12">Woody</span>
+<div class="flex-1 h-1.5 bg-black/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary/60 rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 w-12">Floral</span>
+<div class="flex-1 h-1.5 bg-black/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary/40 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2 pt-4 border-t border-primary/10">
+<span class="text-slate-900 dark:text-white font-bold">From $35</span>
+<button class="flex items-center justify-center rounded-full h-8 px-4 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider hover:bg-primary hover:text-background-dark transition-colors">
+                                        Select Size
+                                    </button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-5 rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 shadow-lg min-w-[280px] max-w-[320px] snap-center p-4 backdrop-blur-md group hover:border-primary/40 transition-all">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl relative overflow-hidden bg-background-light dark:bg-black/40 flex items-center justify-center">
+<img alt="Tom Ford Oud Wood Perfume Bottle" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Dark sophisticated perfume bottle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChf_IY0rgK2A2I8u5fJuM9CWkXtsLCqU_AJDf4WeCCG6feV3ggabUVuadsygM184p9Q3xLzEp9Ggxqh0FUru4KUYL_KYw2Fv7LQfpaHaeY5uBgbvvJROBTLk4QgWpfq8bl7dtWIC3J6VcIMupRJ9IUcQsvhEJpIetH_fyVNqsvU1fj88rKPOMwWCQCoorXsiRktFoDLTBwLqbLiTBX0cFYXNiH3Wbmttwz0HLameetWiYL0s6FE_CdjFhufO8XovIcjIeCch--GiCv"/>
+</div>
+<div class="flex flex-col gap-3">
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-serif font-bold leading-snug">Tom Ford Oud Wood</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium tracking-wide">Woody, Spicy</p>
+</div>
+<div class="flex flex-col gap-1.5 mt-2">
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 w-12">Woody</span>
+<div class="flex-1 h-1.5 bg-black/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary/80 rounded-full" style="width: 95%"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 w-12">Spicy</span>
+<div class="flex-1 h-1.5 bg-black/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary/60 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 w-12">Oud</span>
+<div class="flex-1 h-1.5 bg-black/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary/40 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2 pt-4 border-t border-primary/10">
+<span class="text-slate-900 dark:text-white font-bold">From $28</span>
+<button class="flex items-center justify-center rounded-full h-8 px-4 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider hover:bg-primary hover:text-background-dark transition-colors">
+                                        Select Size
+                                    </button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-5 rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 shadow-lg min-w-[280px] max-w-[320px] snap-center p-4 backdrop-blur-md group hover:border-primary/40 transition-all">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl relative overflow-hidden bg-background-light dark:bg-black/40 flex items-center justify-center">
+<img alt="Parfums de Marly Delina Perfume Bottle" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Elegant pink perfume bottle presentation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3NuxOSmIh9XCsehtIau3f9CUgoEZUOybDaP089oiWJ1A4m5Cy--4NAluuN4cJJogBFi6ijjqrKliktV4Lvp3W98QIkh05QzuaG96SGVMlQCCE_4ydEN0kdl7IvE8VYrCxjkeUe3NgQsBvFdpB98KAywVwDbWW0QUVftG-w4h9QU_NLv5Bk1TiGNS7uydMJ0WW0SgOMK0hhLM0wzCPvSH8mbt0k3I6RU3qd7rhek4zi5ien4eFhewz52XBRzReVAMFgRdt-ss41mUo"/>
+</div>
+<div class="flex flex-col gap-3">
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-serif font-bold leading-snug">Parfums de Marly Delina</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium tracking-wide">Floral, Fruity</p>
+</div>
+<div class="flex flex-col gap-1.5 mt-2">
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 w-12">Floral</span>
+<div class="flex-1 h-1.5 bg-black/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary/80 rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 w-12">Fruity</span>
+<div class="flex-1 h-1.5 bg-black/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary/60 rounded-full" style="width: 70%"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 w-12">Musk</span>
+<div class="flex-1 h-1.5 bg-black/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary/40 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2 pt-4 border-t border-primary/10">
+<span class="text-slate-900 dark:text-white font-bold">From $32</span>
+<button class="flex items-center justify-center rounded-full h-8 px-4 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider hover:bg-primary hover:text-background-dark transition-colors">
+                                        Select Size
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-y border-primary/20">
+<div class="flex flex-col items-center text-center gap-3 p-4">
+<div class="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined" style="font-size: 32px;">verified</span>
+</div>
+<h4 class="text-slate-900 dark:text-white font-serif font-bold text-lg">100% Authentic</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Every decant is hand-poured from genuine retail bottles.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-3 p-4 md:border-x border-primary/20">
+<div class="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined" style="font-size: 32px;">local_shipping</span>
+</div>
+<h4 class="text-slate-900 dark:text-white font-serif font-bold text-lg">Fast Dispatch</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Orders shipped within 24 hours in premium protective packaging.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-3 p-4">
+<div class="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined" style="font-size: 32px;">volunteer_activism</span>
+</div>
+<h4 class="text-slate-900 dark:text-white font-serif font-bold text-lg">Premium Atomizers</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">High-quality glass vials with fine-mist sprayers for perfect application.</p>
+</div>
+</section>
+<section class="rounded-2xl overflow-hidden bg-background-dark relative border border-primary/30 flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 p-10 lg:p-16 flex flex-col gap-6 z-10 relative">
+<span class="text-primary text-sm font-bold uppercase tracking-[0.2em]">Special Offer</span>
+<h2 class="text-white text-4xl font-serif font-bold leading-tight">The Discovery Set</h2>
+<p class="text-slate-300 text-base leading-relaxed">
+                            Not sure where to start? Curate your own signature collection with our Discovery Set. Choose any 5 premium decants (2ml each) and embark on an olfactory journey.
+                        </p>
+<ul class="text-slate-400 text-sm flex flex-col gap-2 mt-2">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Perfect for testing before buying a full bottle.</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Beautifully presented in a luxury gift box.</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Save 15% compared to individual purchases.</li>
+</ul>
+<div class="mt-4">
+<button class="flex items-center justify-center rounded-full h-12 px-8 bg-primary text-background-dark text-sm font-bold uppercase tracking-wider hover:bg-white transition-colors">
+                                Build Your Set - $45
+                            </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 h-64 md:h-full min-h-[400px] relative">
+<div class="absolute inset-0 bg-gradient-to-r from-background-dark to-transparent z-10 hidden md:block"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent z-10 md:hidden"></div>
+<img alt="Perfume Discovery Set" class="w-full h-full object-cover" data-alt="Collection of small premium perfume samples" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDbQmmkJzJ_2q-hp4yd2vO7hLMQC8vmKv_dDRoOj38tbF52_jekPyb_v6MbBxzOH04VwS-g4BkU6AAA_pGQE9YmbngnSXKA_RkPql06C4pkX6B41lw27gxI-gxzyZE--vRNOXjNCtbP4Huvf0r9LZvwyGg6S65giAEyQuyaeVxMuO4SKCb-JGbQa__i2F0j2vyblobIij52swQlCWzyE-yYZe4LccrMIc1bA2I8nC5BHdelf4q22Xt-V-stj6B6g585YHVQaMhtD8S"/>
+</div>
+</section>
+</main>
+<footer class="border-t border-primary/20 py-10 px-10 text-center text-sm text-slate-500 dark:text-slate-400 bg-background-light dark:bg-black/40">
+<div class="flex items-center justify-center gap-2 mb-4 text-primary">
+<span class="material-symbols-outlined">water_drop</span>
+<span class="font-serif font-bold text-lg tracking-widest uppercase">Perfume Adicto</span>
+</div>
+<p>© 2024 Perfume Adicto. All rights reserved. The art of scent, decanted.</p>
+</footer>
+</div>
+</div>
+</body></html>
