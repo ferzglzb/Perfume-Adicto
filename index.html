@@ -966,6 +966,13 @@
 </a>
 
 <script>
+    // ═══════════════ FORCE SCROLL TO TOP ═══════════════
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
+    window.scrollTo(0, 0);
+
     // ═══════════════ CATALOG DATA ═══════════════
     const perfumes = [
         { name: "Le Male Elixir", brand: "Jean Paul Gaultier", p3: 170, p5: 200, p10: 350, img: "https://fimgs.net/mdimg/perfume/375x500.81642.jpg" },
