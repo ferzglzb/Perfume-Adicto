@@ -758,7 +758,7 @@
         <div class="text-xs font-bold uppercase tracking-[0.15em] text-slate-500 dark:text-slate-400 px-2" id="resultCount"></div>
 
         <!-- Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="grid">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-6" id="grid">
             <p class="hidden col-span-full text-center text-slate-500 dark:text-slate-400 py-20" id="empty">No se encontraron resultados.</p>
         </div>
     </section>
@@ -967,7 +967,7 @@
 
 <!-- Version Indicator for Debugging Cache -->
 <div class="fixed bottom-4 left-4 z-[9999] bg-black/80 backdrop-blur text-primary text-[10px] font-bold px-2 py-1 rounded border border-primary/30 uppercase tracking-widest pointer-events-none">
-    Ver 2.1
+    Ver 2.2
 </div>
 
 <script>
@@ -975,8 +975,11 @@
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
+    // Timeout added to bypass mobile browser rendering quirks
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 100);
     window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
-    window.scrollTo(0, 0);
 
     // ═══════════════ CATALOG DATA ═══════════════
     const perfumes = [
@@ -1132,38 +1135,38 @@
             });
 
             const card = document.createElement('div');
-            card.className = 'flex flex-col gap-4 rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 shadow-lg p-4 backdrop-blur-md group hover:border-primary/40 transition-all card-animate';
+            card.className = 'flex flex-col gap-2 md:gap-4 rounded-xl md:rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 shadow-lg p-2 md:p-4 backdrop-blur-md group hover:border-primary/40 transition-all card-animate';
             card.style.transitionDelay = `${Math.min(i, 8) * 0.06}s`;
             card.innerHTML = `
-                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl relative overflow-hidden bg-background-light dark:bg-black/40 flex items-center justify-center">
+                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg md:rounded-xl relative overflow-hidden bg-background-light dark:bg-black/40 flex items-center justify-center">
                     <img alt="${p.name}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy" src="${p.img}" onerror="this.style.display='none'">
-                    <div class="absolute top-3 left-3 bg-background-dark/80 text-primary text-[10px] font-bold px-2 py-1 rounded backdrop-blur-sm uppercase tracking-wider">${p.brand}</div>
+                    <div class="absolute top-2 left-2 bg-background-dark/80 text-primary text-[8px] md:text-[10px] font-bold px-1.5 md:px-2 py-0.5 md:py-1 rounded backdrop-blur-sm uppercase tracking-wider">${p.brand}</div>
                 </div>
-                <div class="flex flex-col gap-3">
-                    <h3 class="text-slate-900 dark:text-white text-lg font-serif font-bold leading-snug">${p.name}</h3>
+                <div class="flex flex-col gap-2 md:gap-3">
+                    <h3 class="text-slate-900 dark:text-white text-sm md:text-lg font-serif font-bold leading-tight md:leading-snug truncate" title="${p.name}">${p.name}</h3>
                     <!-- Prices -->
-                    <div class="grid grid-cols-3 gap-2">
-                        <div class="text-center p-2 rounded-lg border border-primary/10 bg-primary/5">
-                            <span class="block text-[10px] font-bold text-slate-400 uppercase">3ml</span>
-                            <span class="text-primary font-bold text-sm">$${p.p3}</span>
+                    <div class="grid grid-cols-3 gap-1 md:gap-2">
+                        <div class="text-center p-1 md:p-2 rounded md:rounded-lg border border-primary/10 bg-primary/5">
+                            <span class="block text-[8px] md:text-[10px] font-bold text-slate-400 uppercase">3ml</span>
+                            <span class="text-primary font-bold text-xs md:text-sm">$${p.p3}</span>
                         </div>
-                        <div class="text-center p-2 rounded-lg border border-primary/10 bg-primary/5">
-                            <span class="block text-[10px] font-bold text-slate-400 uppercase">5ml</span>
-                            <span class="text-primary font-bold text-sm">$${p.p5}</span>
+                        <div class="text-center p-1 md:p-2 rounded md:rounded-lg border border-primary/10 bg-primary/5">
+                            <span class="block text-[8px] md:text-[10px] font-bold text-slate-400 uppercase">5ml</span>
+                            <span class="text-primary font-bold text-xs md:text-sm">$${p.p5}</span>
                         </div>
-                        <div class="text-center p-2 rounded-lg border border-primary/10 bg-primary/5">
-                            <span class="block text-[10px] font-bold text-slate-400 uppercase">10ml</span>
-                            <span class="text-primary font-bold text-sm">$${p.p10}</span>
+                        <div class="text-center p-1 md:p-2 rounded md:rounded-lg border border-primary/10 bg-primary/5">
+                            <span class="block text-[8px] md:text-[10px] font-bold text-slate-400 uppercase">10ml</span>
+                            <span class="text-primary font-bold text-xs md:text-sm">$${p.p10}</span>
                         </div>
                     </div>
                     <!-- WhatsApp button -->
                     <a href="https://wa.me/528443427065?text=${msg}" target="_blank"
-                       class="flex items-center justify-center rounded-full h-10 bg-[#25D366] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#1ebe5a] transition-colors no-underline gap-2">
-                        <i class="fab fa-whatsapp text-base"></i> Lo Quiero
+                       class="flex items-center justify-center rounded-full h-8 md:h-10 bg-[#25D366] text-white text-[10px] md:text-xs font-bold uppercase tracking-wider hover:bg-[#1ebe5a] transition-colors no-underline gap-1.5 md:gap-2">
+                        <i class="fab fa-whatsapp text-sm md:text-base"></i> Lo Quiero
                     </a>
                     <!-- Accord toggle -->
-                    <button data-accord-toggle class="flex items-center justify-center gap-1 text-primary text-[10px] font-bold uppercase tracking-widest py-2 border-t border-primary/10 hover:bg-primary/5 transition-colors rounded-b-lg cursor-pointer bg-transparent border-x-0 border-b-0">
-                        Ver Acordes <span class="material-symbols-outlined text-sm">expand_more</span>
+                    <button data-accord-toggle class="flex items-center justify-center gap-0.5 md:gap-1 text-primary text-[8px] md:text-[10px] font-bold uppercase tracking-widest py-1.5 md:py-2 border-t border-primary/10 hover:bg-primary/5 transition-colors rounded-b-lg cursor-pointer bg-transparent border-x-0 border-b-0">
+                        Ver Acordes <span class="material-symbols-outlined text-xs md:text-sm">expand_more</span>
                     </button>
                     <div class="accord-panel flex flex-col gap-1.5">
                         ${accordsHtml}
