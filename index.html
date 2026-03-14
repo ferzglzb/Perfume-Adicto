@@ -536,16 +536,18 @@
         /* ═══ STATS SECTION ═══ */
         .stat-card {
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 1.5rem 1rem;
             position: relative;
         }
+        @media (min-width: 768px) { .stat-card { padding: 2rem 1rem; } }
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.25rem;
             font-weight: 800;
             color: #c9a74a;
             line-height: 1;
             font-family: 'Manrope', sans-serif;
         }
+        @media (min-width: 768px) { .stat-number { font-size: 3rem; } }
         .stat-label {
             font-size: 0.7rem;
             text-transform: uppercase;
@@ -598,7 +600,7 @@
 <div class="flex h-full grow flex-col">
 
 <!-- ═══════════════ HEADER ═══════════════ -->
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/20 px-6 lg:px-10 py-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/20 px-4 sm:px-6 lg:px-10 py-3 md:py-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
     <div class="flex items-center gap-8">
         <a href="#" class="flex items-center gap-3 text-primary no-underline">
             <span class="material-symbols-outlined" style="font-size: 28px;">water_drop</span>
@@ -637,21 +639,21 @@
 </div>
 
 <!-- ═══════════════ MAIN ═══════════════ -->
-<main class="flex-1 w-full max-w-7xl mx-auto flex flex-col pt-8 pb-16 gap-16 px-6 lg:px-10">
+<main class="flex-1 w-full max-w-7xl mx-auto flex flex-col pt-4 pb-8 gap-8 md:pt-8 md:pb-16 md:gap-16 px-4 sm:px-6 lg:px-10">
 
     <!-- ──── HERO ──── -->
     <section class="@container relative" id="hero">
         <!-- Floating orbs -->
         <div class="orb orb-1" style="top: -100px; left: -100px;"></div>
         <div class="orb orb-2" style="bottom: -50px; right: -80px;"></div>
-        <div class="flex flex-col gap-10 @[864px]:flex-row items-center relative rounded-2xl overflow-hidden bg-gradient-to-br from-black/40 to-black/10 dark:from-black/60 dark:to-black/30 border border-primary/20 p-8 lg:p-16 backdrop-blur-sm">
+        <div class="flex flex-col gap-6 md:gap-10 @[864px]:flex-row items-center relative rounded-2xl overflow-hidden bg-gradient-to-br from-black/40 to-black/10 dark:from-black/60 dark:to-black/30 border border-primary/20 p-5 md:p-8 lg:p-16 backdrop-blur-sm">
             <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay pointer-events-none"></div>
             <!-- Animated gradient overlay -->
             <div class="absolute inset-0 animated-gradient opacity-30 pointer-events-none"></div>
             <div class="flex flex-col gap-8 @[480px]:min-w-[400px] @[864px]:w-1/2 z-10">
                 <div class="flex flex-col gap-4 text-left">
                     <span class="text-primary text-sm font-bold uppercase tracking-[0.2em] hero-kicker">Decants de Lujo · Saltillo, MX</span>
-                    <h2 class="text-slate-900 dark:text-white text-5xl font-serif font-bold leading-tight @[480px]:text-6xl lg:text-7xl hero-title">
+                    <h2 class="text-slate-900 dark:text-white text-4xl font-serif font-bold leading-tight @[480px]:text-5xl md:text-6xl lg:text-7xl hero-title">
                         The Art of Scent,<br/>
                         <span class="text-shimmer">Decanted.</span>
                     </h2>
@@ -659,11 +661,11 @@
                         Experimenta las fragancias más codiciadas del mundo, decantadas a mano en opciones de viaje. 100% autenticidad garantizada.
                     </p>
                 </div>
-                <div class="flex flex-wrap gap-4 items-center hero-btns">
-                    <a href="#catalogo" class="flex items-center justify-center rounded-full h-14 px-8 bg-primary text-background-dark text-base font-bold uppercase tracking-wider hover:bg-primary/90 hover:scale-105 transition-all shadow-[0_0_20px_rgba(201,167,74,0.3)] no-underline duration-300">
+                <div class="flex flex-wrap gap-3 md:gap-4 items-center hero-btns">
+                    <a href="#catalogo" class="flex items-center justify-center rounded-full h-12 md:h-14 px-6 md:px-8 bg-primary text-background-dark text-sm md:text-base font-bold uppercase tracking-wider hover:bg-primary/90 hover:scale-105 transition-all shadow-[0_0_20px_rgba(201,167,74,0.3)] no-underline duration-300">
                         Explorar Colección
                     </a>
-                    <a href="#decants" class="flex items-center justify-center rounded-full h-14 px-8 border-2 border-primary text-primary text-base font-bold uppercase tracking-wider hover:bg-primary/10 hover:scale-105 transition-all no-underline duration-300">
+                    <a href="#decants" class="flex items-center justify-center rounded-full h-12 md:h-14 px-6 md:px-8 border-2 border-primary text-primary text-sm md:text-base font-bold uppercase tracking-wider hover:bg-primary/10 hover:scale-105 transition-all no-underline duration-300">
                         ¿Cómo funciona?
                     </a>
                 </div>
@@ -671,7 +673,7 @@
             <div class="w-full @[864px]:w-1/2 flex justify-center items-center z-10 relative">
                 <div class="absolute w-72 h-72 bg-primary/20 rounded-full blur-[100px] orb-1"></div>
                 <!-- Hero Image (Mobile Optimized) -->
-                <div class="relative w-[80%] max-w-sm mx-auto overflow-hidden rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-primary/20 bg-white/5 backdrop-blur-xl group">
+                <div class="relative w-[70%] md:w-[80%] max-w-sm mx-auto overflow-hidden rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-primary/20 bg-white/5 backdrop-blur-xl group">
                     <img alt="Luxurious perfume bottle" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrGSzAJlg9aC35wwhtjyVeXoe03-N0gyFWPJdp2F3LUCqm03fFRs3lDPu0APRlb_egMRZrrNmvWCWvk3PluBiSpNqgtRTBf8nIslSc44JxeEram8BSnaqxSpAGgLv3dLwd2Ftj49YxWBRXZv0tJPW23L0ozxj7YLKUrXJRfUx4QLqkc3doj7Vb4yJY7tlBaYOZYR3haT-e6QwP1Dp_eMfgVnkir8FTXW0-XcmXi9C4biiLXWL3fFSfvitUbhMwKI4OB03fNVVqxgNm"/>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                     <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none mix-blend-overlay"></div>
@@ -708,22 +710,22 @@
     </div>
 
     <!-- ──── TRUST BADGES ──── -->
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-y border-primary/20">
-        <div class="flex flex-col items-center text-center gap-3 p-4 trust-anim reveal" style="transition-delay: 0s">
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 py-6 md:py-8 border-y border-primary/20">
+        <div class="flex flex-col items-center text-center gap-2 md:gap-3 p-3 md:p-4 trust-anim reveal" style="transition-delay: 0s">
             <div class="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2 trust-icon" style="animation: pulse-glow 3s ease-in-out infinite">
                 <span class="material-symbols-outlined" style="font-size: 32px;">verified</span>
             </div>
             <h4 class="text-slate-900 dark:text-white font-serif font-bold text-lg">100% Auténtico</h4>
             <p class="text-slate-500 dark:text-slate-400 text-sm">Cada decant se extrae de frascos originales genuinos.</p>
         </div>
-        <div class="flex flex-col items-center text-center gap-3 p-4 md:border-x border-primary/20 trust-anim reveal" style="transition-delay: 0.15s">
+        <div class="flex flex-col items-center text-center gap-2 md:gap-3 p-3 md:p-4 md:border-x border-primary/20 trust-anim reveal" style="transition-delay: 0.15s">
             <div class="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2" style="animation: pulse-glow 3s ease-in-out 1s infinite">
                 <span class="material-symbols-outlined" style="font-size: 32px;">local_shipping</span>
             </div>
             <h4 class="text-slate-900 dark:text-white font-serif font-bold text-lg">Entrega Rápida</h4>
             <p class="text-slate-500 dark:text-slate-400 text-sm">Pedidos enviados en menos de 24 horas con empaque protector premium.</p>
         </div>
-        <div class="flex flex-col items-center text-center gap-3 p-4 trust-anim reveal" style="transition-delay: 0.3s">
+        <div class="flex flex-col items-center text-center gap-2 md:gap-3 p-3 md:p-4 trust-anim reveal" style="transition-delay: 0.3s">
             <div class="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2" style="animation: pulse-glow 3s ease-in-out 2s infinite">
                 <span class="material-symbols-outlined" style="font-size: 32px;">volunteer_activism</span>
             </div>
@@ -733,10 +735,10 @@
     </section>
 
     <!-- ──── CATÁLOGO DINÁMICO ──── -->
-    <section class="flex flex-col gap-8" id="catalogo">
-        <div class="flex flex-col gap-2 px-2">
-            <span class="text-primary text-xs font-bold uppercase tracking-[0.2em]">Decants Premium</span>
-            <h2 class="text-slate-900 dark:text-white text-3xl font-serif font-bold leading-tight">Nuestro Catálogo</h2>
+    <section class="flex flex-col gap-5 md:gap-8" id="catalogo">
+        <div class="flex flex-col gap-1 md:gap-2 px-2">
+            <span class="text-primary text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">Decants Premium</span>
+            <h2 class="text-slate-900 dark:text-white text-2xl md:text-3xl font-serif font-bold leading-tight">Nuestro Catálogo</h2>
         </div>
 
         <!-- Search bar -->
@@ -762,13 +764,13 @@
     </section>
 
     <!-- ──── PROMOS ──── -->
-    <section class="flex flex-col gap-8 reveal" id="promos">
-        <div class="flex flex-col gap-2 px-2">
-            <span class="text-primary text-xs font-bold uppercase tracking-[0.2em]">Ofertas Especiales</span>
-            <h2 class="text-slate-900 dark:text-white text-3xl font-serif font-bold leading-tight">Promociones</h2>
+    <section class="flex flex-col gap-5 md:gap-8 reveal" id="promos">
+        <div class="flex flex-col gap-1 md:gap-2 px-2">
+            <span class="text-primary text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">Ofertas Especiales</span>
+            <h2 class="text-slate-900 dark:text-white text-2xl md:text-3xl font-serif font-bold leading-tight">Promociones</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 p-8 backdrop-blur-md hover:border-primary/40 transition-all text-center flex flex-col items-center gap-4 promo-card-anim reveal" style="transition-delay: 0s">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            <div class="rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 p-5 md:p-8 backdrop-blur-md hover:border-primary/40 transition-all text-center flex flex-col items-center gap-3 md:gap-4 promo-card-anim reveal" style="transition-delay: 0s">
                 <div class="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <i class="fas fa-gift text-2xl"></i>
                 </div>
@@ -778,7 +780,7 @@
                     <p class="text-primary font-bold text-sm mt-2">+ 3ml gratis <span class="text-slate-400 font-normal">perfume sorpresa</span></p>
                 </div>
             </div>
-            <div class="rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 p-8 backdrop-blur-md hover:border-primary/40 transition-all text-center flex flex-col items-center gap-4 promo-card-anim reveal" style="transition-delay: 0.15s">
+            <div class="rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 p-5 md:p-8 backdrop-blur-md hover:border-primary/40 transition-all text-center flex flex-col items-center gap-3 md:gap-4 promo-card-anim reveal" style="transition-delay: 0.15s">
                 <div class="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <i class="fas fa-star text-2xl"></i>
                 </div>
@@ -788,7 +790,7 @@
                     <p class="text-primary font-bold text-sm mt-2">+ 5ml gratis <span class="text-slate-400 font-normal">perfume sorpresa</span></p>
                 </div>
             </div>
-            <div class="rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 p-8 backdrop-blur-md hover:border-primary/40 transition-all text-center flex flex-col items-center gap-4 promo-card-anim reveal" style="transition-delay: 0.3s">
+            <div class="rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 p-5 md:p-8 backdrop-blur-md hover:border-primary/40 transition-all text-center flex flex-col items-center gap-3 md:gap-4 promo-card-anim reveal" style="transition-delay: 0.3s">
                 <div class="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <i class="fas fa-crown text-2xl"></i>
                 </div>
@@ -823,25 +825,25 @@
 
     <!-- ──── DISCOVERY SET (from Stitch) ──── -->
     <section class="rounded-2xl overflow-hidden bg-background-dark relative border border-primary/30 flex flex-col md:flex-row items-center reveal">
-        <div class="w-full md:w-1/2 p-10 lg:p-16 flex flex-col gap-6 z-10 relative">
-            <span class="text-primary text-sm font-bold uppercase tracking-[0.2em]">Para Los Curiosos</span>
-            <h2 class="text-white text-4xl font-serif font-bold leading-tight">El Arte del Decant</h2>
-            <p class="text-slate-300 text-base leading-relaxed" id="decants">
+        <div class="w-full md:w-1/2 p-6 md:p-10 lg:p-16 flex flex-col gap-4 md:gap-6 z-10 relative">
+            <span class="text-primary text-[10px] md:text-sm font-bold uppercase tracking-[0.2em]">Para Los Curiosos</span>
+            <h2 class="text-white text-3xl md:text-4xl font-serif font-bold leading-tight">El Arte del Decant</h2>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed" id="decants">
                 Un <strong class="text-white">decant</strong> es una porción de tu fragancia favorita, extraída directamente del frasco original en un atomizador elegante bajo estrictas normas de higiene. La forma perfecta de probar perfumes de diseñador y nicho sin comprometerte con una botella completa.
             </p>
-            <ul class="text-slate-400 text-sm flex flex-col gap-3 mt-2">
-                <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <strong class="text-white">3ml</strong> · ~45 sprays · Ideal para probar</li>
-                <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <strong class="text-white">5ml</strong> · ~75 sprays · Viaje y uso ocasional</li>
-                <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <strong class="text-white">10ml</strong> · ~150 sprays · Uso diario prolongado</li>
+            <ul class="text-slate-400 text-[13px] md:text-sm flex flex-col gap-2 md:gap-3 mt-1 md:mt-2">
+                <li class="flex items-center gap-2 md:gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <strong class="text-white">3ml</strong> · ~45 sprays · Ideal para probar</li>
+                <li class="flex items-center gap-2 md:gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <strong class="text-white">5ml</strong> · ~75 sprays · Viaje y uso ocasional</li>
+                <li class="flex items-center gap-2 md:gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> <strong class="text-white">10ml</strong> · ~150 sprays · Uso diario prolongado</li>
             </ul>
-            <div class="mt-4">
+            <div class="mt-2 md:mt-4">
                 <a href="https://wa.me/528443427065?text=Hola!%20Me%20gustaría%20asesoría%20para%20elegir%20un%20perfume" target="_blank"
-                   class="inline-flex items-center justify-center rounded-full h-12 px-8 bg-primary text-background-dark text-sm font-bold uppercase tracking-wider hover:bg-white transition-colors no-underline gap-2">
+                   class="inline-flex items-center justify-center rounded-full h-10 md:h-12 px-6 md:px-8 bg-primary text-background-dark text-xs md:text-sm font-bold uppercase tracking-wider hover:bg-white transition-colors no-underline gap-2">
                     <i class="fab fa-whatsapp text-lg"></i> Quiero Asesoría
                 </a>
             </div>
         </div>
-        <div class="w-full md:w-1/2 h-64 md:h-full min-h-[400px] relative">
+        <div class="w-full md:w-1/2 h-48 md:h-full min-h-[300px] md:min-h-[400px] relative">
             <div class="absolute inset-0 bg-gradient-to-r from-background-dark to-transparent z-10 hidden md:block"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent z-10 md:hidden"></div>
             <img alt="Perfume Discovery Set" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDbQmmkJzJ_2q-hp4yd2vO7hLMQC8vmKv_dDRoOj38tbF52_jekPyb_v6MbBxzOH04VwS-g4BkU6AAA_pGQE9YmbngnSXKA_RkPql06C4pkX6B41lw27gxI-gxzyZE--vRNOXjNCtbP4Huvf0r9LZvwyGg6S65giAEyQuyaeVxMuO4SKCb-JGbQa__i2F0j2vyblobIij52swQlCWzyE-yYZe4LccrMIc1bA2I8nC5BHdelf4q22Xt-V-stj6B6g585YHVQaMhtD8S"/>
@@ -849,14 +851,14 @@
     </section>
 
     <!-- ──── CONTACTO ──── -->
-    <section class="flex flex-col gap-8 reveal" id="contacto">
-        <div class="flex flex-col gap-2 px-2">
-            <span class="text-primary text-xs font-bold uppercase tracking-[0.2em]">Saltillo, Coahuila</span>
-            <h2 class="text-slate-900 dark:text-white text-3xl font-serif font-bold leading-tight">Entregas y Contacto</h2>
+    <section class="flex flex-col gap-5 md:gap-8 reveal" id="contacto">
+        <div class="flex flex-col gap-1 md:gap-2 px-2">
+            <span class="text-primary text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">Saltillo, Coahuila</span>
+            <h2 class="text-slate-900 dark:text-white text-2xl md:text-3xl font-serif font-bold leading-tight">Entregas y Contacto</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             <!-- Delivery -->
-            <div class="rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 p-8 backdrop-blur-md reveal-left">
+            <div class="rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 p-5 md:p-8 backdrop-blur-md reveal-left">
                 <h3 class="text-white font-serif font-bold text-xl mb-6 flex items-center gap-3">
                     <span class="material-symbols-outlined text-primary">location_on</span> Puntos de Entrega
                 </h3>
@@ -880,7 +882,7 @@
                 </ul>
             </div>
             <!-- Social -->
-            <div class="rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 p-8 backdrop-blur-md">
+            <div class="rounded-2xl bg-white/5 dark:bg-black/20 border border-primary/10 p-5 md:p-8 backdrop-blur-md">
                 <h3 class="text-white font-serif font-bold text-xl mb-6 flex items-center gap-3">
                     <span class="material-symbols-outlined text-primary">connect_without_contact</span> Síguenos
                 </h3>
@@ -916,14 +918,14 @@
 </main>
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
-<footer class="bg-background-dark border-t border-primary/10 py-16 px-6 lg:px-20">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<footer class="bg-background-dark border-t border-primary/10 py-10 px-4 md:py-16 md:px-20">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
         <div class="col-span-1 md:col-span-2">
-            <div class="flex items-center gap-2 text-primary mb-6">
+            <div class="flex items-center gap-2 text-primary mb-4 md:mb-6">
                 <span class="material-symbols-outlined text-4xl">water_drop</span>
                 <h2 class="font-serif text-2xl font-bold tracking-widest uppercase">Perfume Adicto</h2>
             </div>
-            <p class="text-slate-400 max-w-md leading-relaxed mb-8">
+            <p class="text-slate-400 max-w-md leading-relaxed mb-6 md:mb-8 text-sm md:text-base">
                 Tu destino premium para decants de fragancias de lujo y nicho en Saltillo, Coahuila. Cada spray es una experiencia de lujo puro.
             </p>
             <div class="flex gap-4">
