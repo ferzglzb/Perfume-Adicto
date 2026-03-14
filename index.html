@@ -824,10 +824,10 @@
     </section>
 
     <!-- ──── DISCOVERY SET (from Stitch) ──── -->
-    <section class="rounded-2xl overflow-hidden bg-background-dark relative border border-primary/30 flex flex-col md:flex-row items-center reveal">
+    <section class="rounded-2xl overflow-hidden bg-gradient-to-br from-[#1a1814] to-black relative border border-primary/30 flex flex-col md:flex-row items-center reveal shadow-[0_0_40px_rgba(201,167,74,0.05)]" style="margin-top: 2rem;">
         <div class="w-full md:w-1/2 p-6 md:p-10 lg:p-16 flex flex-col gap-4 md:gap-6 z-10 relative">
-            <span class="text-primary text-[10px] md:text-sm font-bold uppercase tracking-[0.2em]">Para Los Curiosos</span>
-            <h2 class="text-white text-3xl md:text-4xl font-serif font-bold leading-tight">El Arte del Decant</h2>
+            <span class="text-primary text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] flex items-center gap-2"><div class="w-4 h-[1px] bg-primary"></div> Para Los Curiosos</span>
+            <h2 class="text-white text-3xl md:text-5xl font-serif font-bold leading-tight">El Arte del Decant</h2>
             <p class="text-slate-300 text-sm md:text-base leading-relaxed" id="decants">
                 Un <strong class="text-white">decant</strong> es una porción de tu fragancia favorita, extraída directamente del frasco original en un atomizador elegante bajo estrictas normas de higiene. La forma perfecta de probar perfumes de diseñador y nicho sin comprometerte con una botella completa.
             </p>
@@ -844,8 +844,8 @@
             </div>
         </div>
         <div class="w-full md:w-1/2 h-48 md:h-full min-h-[300px] md:min-h-[400px] relative">
-            <div class="absolute inset-0 bg-gradient-to-r from-background-dark to-transparent z-10 hidden md:block"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent z-10 md:hidden"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#1a1814] to-transparent z-10 hidden md:block"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#161411] to-transparent z-10 md:hidden"></div>
             <img alt="Perfume Discovery Set" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDbQmmkJzJ_2q-hp4yd2vO7hLMQC8vmKv_dDRoOj38tbF52_jekPyb_v6MbBxzOH04VwS-g4BkU6AAA_pGQE9YmbngnSXKA_RkPql06C4pkX6B41lw27gxI-gxzyZE--vRNOXjNCtbP4Huvf0r9LZvwyGg6S65giAEyQuyaeVxMuO4SKCb-JGbQa__i2F0j2vyblobIij52swQlCWzyE-yYZe4LccrMIc1bA2I8nC5BHdelf4q22Xt-V-stj6B6g585YHVQaMhtD8S"/>
         </div>
     </section>
@@ -1144,25 +1144,25 @@
                 </div>
                 <div class="flex flex-col gap-2 md:gap-3">
                     <h3 class="text-slate-900 dark:text-white text-sm md:text-lg font-serif font-bold leading-tight md:leading-snug truncate" title="${p.name}">${p.name}</h3>
-                    <!-- Prices -->
-                    <div class="grid grid-cols-3 gap-1 md:gap-2">
-                        <div class="text-center p-1 md:p-2 rounded md:rounded-lg border border-primary/10 bg-primary/5">
-                            <span class="block text-[8px] md:text-[10px] font-bold text-slate-400 uppercase">3ml</span>
+                    <!-- Prices Inline (Simplified) -->
+                    <div class="flex items-center justify-between bg-primary/5 border border-primary/10 rounded-md md:rounded-lg p-1.5 md:p-2 divide-x divide-primary/20">
+                        <div class="flex-1 text-center px-1">
+                            <span class="block text-[8px] md:text-[9px] font-bold text-slate-500 uppercase tracking-widest">3ml</span>
                             <span class="text-primary font-bold text-xs md:text-sm">$${p.p3}</span>
                         </div>
-                        <div class="text-center p-1 md:p-2 rounded md:rounded-lg border border-primary/10 bg-primary/5">
-                            <span class="block text-[8px] md:text-[10px] font-bold text-slate-400 uppercase">5ml</span>
+                        <div class="flex-1 text-center px-1">
+                            <span class="block text-[8px] md:text-[9px] font-bold text-slate-500 uppercase tracking-widest">5ml</span>
                             <span class="text-primary font-bold text-xs md:text-sm">$${p.p5}</span>
                         </div>
-                        <div class="text-center p-1 md:p-2 rounded md:rounded-lg border border-primary/10 bg-primary/5">
-                            <span class="block text-[8px] md:text-[10px] font-bold text-slate-400 uppercase">10ml</span>
+                        <div class="flex-1 text-center px-1">
+                            <span class="block text-[8px] md:text-[9px] font-bold text-slate-500 uppercase tracking-widest">10ml</span>
                             <span class="text-primary font-bold text-xs md:text-sm">$${p.p10}</span>
                         </div>
                     </div>
-                    <!-- WhatsApp button -->
+                    <!-- Elegant Add Button -->
                     <a href="https://wa.me/528443427065?text=${msg}" target="_blank"
-                       class="flex items-center justify-center rounded-full h-8 md:h-10 bg-[#25D366] text-white text-[10px] md:text-xs font-bold uppercase tracking-wider hover:bg-[#1ebe5a] transition-colors no-underline gap-1.5 md:gap-2">
-                        <i class="fab fa-whatsapp text-sm md:text-base"></i> Lo Quiero
+                       class="flex items-center justify-center rounded-full h-8 md:h-10 bg-primary/10 text-primary border border-primary/30 text-[10px] md:text-xs font-bold uppercase tracking-wider hover:bg-primary hover:text-black transition-colors no-underline gap-1.5 md:gap-2 mt-1">
+                        <i class="fab fa-whatsapp text-sm md:text-base"></i> Reservar
                     </a>
                     <!-- Accord toggle -->
                     <button data-accord-toggle class="flex items-center justify-center gap-0.5 md:gap-1 text-primary text-[8px] md:text-[10px] font-bold uppercase tracking-widest py-1.5 md:py-2 border-t border-primary/10 hover:bg-primary/5 transition-colors rounded-b-lg cursor-pointer bg-transparent border-x-0 border-b-0">
